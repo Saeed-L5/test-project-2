@@ -37,7 +37,9 @@ $(document).ready(function() {
 
         return winPatterns.some(pattern => {
             if (pattern.every(index => gameState[index] === currentPlayer)) {
-                pattern.forEach(i => $(`.cell[data-index="${i}"]`).css('transform', 'scale(1.1)');
+                pattern.forEach(i => {
+                    return $(`.cell[data-index="${i}"]`).css('transform', 'scale(1.1)');
+                });
                 return true;
             }
             return false;
